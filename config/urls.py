@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from menu.views import home
 from django.conf.urls.static import static
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -33,6 +34,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', home),
     path('admin/', admin.site.urls),
     path("api/", include("menu.urls")),
     path("api/orders/", include("orders.urls")),

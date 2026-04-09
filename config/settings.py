@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -146,3 +147,14 @@ EMAIL_HOST_USER = "giwajamiu00@gmail.com"
 EMAIL_HOST_PASSWORD = "ppjy ytis szhv aiuc"
 
 DEFAULT_FROM_EMAIL = "FoodCo <giwajamiu00@gmail.com>"
+
+if os.environ.get("CREATE_SUPERUSER") == "True":
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+
+    if not User.objects.filter(username="jamiu").exists():
+        User.objects.create_superuser(
+            username="jamiu",
+            email="horlarmhi09@gmail.com",
+            password="giwa,.00jamiu"
+        )

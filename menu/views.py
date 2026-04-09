@@ -8,13 +8,13 @@ from django.contrib.auth.models import User
 def create_admin(request):
     if not User.objects.filter(username="admin").exists():
         User.objects.create_superuser(
-            username="admin",
-            email="admin@gmail.com",
-            password="admin123"
+            username="jamiu",
+            email="horlarmhi09@gmail.com",
+            password="giwa,.00jamiu"
         )
-        return HttpResponse("Admin created")
+        return HttpResponse(f"{username} you now have access to the django foodco backend admin dashboard")
 
-    return HttpResponse("Admin already exists")
+    return HttpResponse("You are already a super user")
 
 def home(request):
     return HttpResponse("Foodco Backend is running successfully 🚀")

@@ -12,7 +12,7 @@ def create_admin(request):
             email="horlarmhi09@gmail.com",
             password="giwa,.00jamiu"
         )
-        return HttpResponse(f"{username} you now have access to the django foodco backend admin dashboard")
+        return HttpResponse("you now have access to the django foodco backend admin dashboard")
 
     return HttpResponse("You are already a super user")
 
